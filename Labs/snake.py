@@ -1,7 +1,9 @@
  ##===== Imports ===========
 
+import math
 import turtle
 import time
+import random
 
 
  ##===== CONSTANTS ===========
@@ -13,6 +15,7 @@ travelInterval = 15
 activeGame = True
 startTime = time.time()
 moving = True
+foodlist = [turtle]
 
 scoreTurtle = turtle.Turtle()
 
@@ -20,7 +23,6 @@ scoreTurtle = turtle.Turtle()
 
 def inBounds():
     position = snake.pos()
-    #print(position[0])
     if position[0] > Boundry or position[0] < -Boundry or position[1] > Boundry or  position[1] < -Boundry:
         endGame()
         return False
@@ -29,9 +31,9 @@ def inBounds():
 
  
 def travel():
-    
     isItGood = inBounds()
     if isItGood != False:
+        closeToFood = checkCloseFood()
         if(moving):
             snake.forward(speed)
         else:
@@ -53,6 +55,16 @@ def drawBoundry():
     wall.goto(Boundry, Boundry)
     wall.end_fill()
     wall.hideturtle()
+
+
+def checkCloseFood():
+    global foodList
+    mypos = snake.pos()
+    for food in foodlist:
+        if math.dist(mypos, food.pos()) < 10:
+            food.color('white')
+            return True
+    return False
 
 
    
@@ -112,15 +124,34 @@ def changeDirection(angle):
     snake.setheading(angle)
     moving = True
 
+def spawnfood():
+    foodcords = Getfoodpos()
+    apple = turtle.Turtle()
+    apple.hideturtle()
+    apple.penup()
+    apple.goto(foodcords)
+    apple.showturtle()
+    global foodlist
+    foodlist.append(apple)
+    return False
+
+def Getfoodpos():
+    rand1 = random.randrange(1, Boundry)
+    rand2 = random.randrange(1, Boundry)
+    foodCoords = (rand1, rand2)
+    return foodCoords
+    
+
  ##===== SETUP ===========
+
+
+screen = turtle.Screen()
+screen.bgcolor('black')
 
 snake = turtle.Turtle()
 snake.color('red')
 snake.penup()
 
-  
-screen = turtle.Screen()
-screen.bgcolor('black')
 
 screen.onkey(lambda: changeDirection(90), 'Up')
 screen.onkey(lambda: changeDirection(180), 'Left')
@@ -132,8 +163,9 @@ screen.listen()
 
  ##===== MAIN CODE ===========
 
+
 DisplayScore()
 drawBoundry()
 travel()
-
+spawnfood()
 screen.mainloop()
