@@ -31,7 +31,11 @@ def getLast(myList):
 
 # Get the biggest number in the list
 def getGreatest(myList):
-    return False
+    bigNum = 0
+    for item in myList:
+        if item > bigNum:
+            bigNum = item
+    return bigNum
 
 # Get the smallest number in the list
 def getSmallest(myList):
@@ -45,12 +49,13 @@ def getAddedUp(myList):
 def getMultiplied(myList):
     return False
 
-
-
+print("\n\n\n\n")
+print(myList)
 #print( getFirst(myList) )
 #print( getLast(myList) )
-#print( getGreatest(myList) )
+print("Biggest Num: " + str(getGreatest(myList)))
 #print( getSmallest(myList) )
 #print( getAddedUp(myList) )
 #print( getMultiplied(myList) )
+print("\n\n")
 
