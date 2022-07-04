@@ -29,7 +29,7 @@ def getFirst(myList):
 # Get the last item in the list
 def getLast(myList):
     print(myList[11])
-    return False;
+    return False
 
 # Get the biggest number in the list
 def getGreatest(myList):
