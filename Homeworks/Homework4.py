@@ -1,7 +1,8 @@
 import math
 
-myList = [23, 55, 123, 2, 1, 99, 21, 59, 293, 11, 55, 100]
+myList1 = [23, 55, 123, 2, 1, 99, 21, 59, 293, 11, 55, 100]
 
+myList2 = [55, 123, 2, 11, 55, 100]
 
 # Assignment: uncomment the prints at the bottom, and make them work properly
 
@@ -23,45 +24,63 @@ myList = [23, 55, 123, 2, 1, 99, 21, 59, 293, 11, 55, 100]
 
 # Get the first item in the list
 def getFirst(myList):
-    print(myList[0])
-    return False
+    return myList[0]
 
 # Get the last item in the list
 def getLast(myList):
-    print(myList[11])
-    return False
+    return myList[11]
 
 # Get the biggest number in the list
 def getGreatest(myList):
-    print(myList[8])
-    return False
+    return myList[8]
 
 # Get the smallest number in the list
 def getSmallest(myList):
-    print(myList[3])
-    return False
+    return myList[3]
 
 # Get all the numbers added up
 def getAddedUp(myList):
     booty = 0
-    for thing in myList:
-        booty = thing + booty
+
+# OLD FOR LOOP
+    #for thing in myList:      
+    #    booty = thing + booty
+
+# New FOR LOOP
+    numItems = len(myList) # This is number of things in the list - length of list is: len(list)
+    for x in range(numItems): # x is the index in the foor loop, so 0, then 1, then 2, then 3
+        booty = myList[x] + booty # This adds up each thing in the fo
+
     return booty
 
 # Get all the numbers multipled up
 def getMultiplied(myList):
     butts = 1
-    for themnumbers in myList:
-        butts = themnumbers * butts
+    #for themnumbers in myList:
+    #    butts = themnumbers * butts
+    numItems = len(myList)
+
+    for x in range(numItems):
+        butts = myList[x] * butts
+
     return butts
 
 
 
+print("\n\nLIST 1\n")
 
-print( getFirst(myList) )
-print( getLast(myList) )
-print( getGreatest(myList) )
-print( getSmallest(myList) )
-print( getAddedUp(myList) )
-print( getMultiplied(myList) )
+print( getFirst(myList1) )
+print( getLast(myList1) )
+print( getGreatest(myList1) )
+print( getSmallest(myList1) )
+print( getAddedUp(myList1) )
+print( getMultiplied(myList1) )
 
+
+print("\n\nLIST 2\n")
+print( getFirst(myList2) )
+#print( getLast(myList2) )
+#print( getGreatest(myList2) )
+#print( getSmallest(myList2) )
+#print( getAddedUp(myList2) )
+#print( getMultiplied(myList2) )
