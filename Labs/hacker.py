@@ -41,7 +41,15 @@ def hackPassword(showUpdates):
     global password
     passwordGuess = ""
     attempts = 0
-    while(password != passwordGuess):
+
+    letterlist = ["a", "b", "c", 'd', 'e', 'f', 'g']
+    
+    for letter in letterlist:
+        passwordGuess = letter
+        if password == passwordGuess:
+            
+            break
+        attempts = attempts + 1
         print(passwordGuess)
 
 
@@ -54,7 +62,6 @@ def hackPassword(showUpdates):
 
         if(showUpdates == True):
             writeGuess(passwordGuess)
-        attempts = attempts + 1
     writeGuess(passwordGuess)
     print("Hacked your password in " + str(attempts) + " attempts")
 
