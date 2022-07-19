@@ -16,16 +16,21 @@
 # 5. If the user doesn't want to use the files, let them just do it with the chat like above
 
 
-
+# Ex: A list of words like ['hello', 'I', 'Am', 'Gavin'] is returned from def readFile
+# wordsInFile = readFile() <- that lets you read file
+#print(wordsInFile)
 
 
 # ======= Contants =============
 
 
 # ======= FUNCTIONS ===========
+from os import getcwd
+
+
 def readFile():
     # the open keyword opens a file in read-only mode by default
-    f = open("/input.txt" "r")
+    f = open("Homeworks/input.txt")
     # read all the lines in the file and return them in a list
     inputWords = []
     lines = f.readlines()
@@ -35,22 +40,49 @@ def readFile():
     f.close()
     return inputWords
 
+
 def writeFile(words):
-    f = open("/output.txt", "w")
+    f = open("Homeworks/output.txt", "w")
     f.write(words)
     f.close()
 
 
+def encryptWords(words):
+    return
+
+
+def decryptWords(words):
+    return
 
 
 
 # ========= Main Code ==========
 
 
-wordsInFile = readFile()
-print(wordsInFile)
+# Take this code below and put it in funtions above (encrypt and decrypt )
+
+print("\n\nType your message")
+message = input()
 
 
-writeFile("HI ")
+encrypt = []
 
-# Ask user for inpupt
+#encrypt.append() - add to list 
+
+for letter in message:
+    codelett = ord(letter)
+    encrypt.append(codelett)
+
+
+print(encrypt)
+
+goodList = []
+goodStr = ""
+
+
+for numbs in encrypt:
+    codereturn = chr(numbs)
+    uncripSTR = uncripSTR + codereturn
+    #uncrip.append(codereturn)
+
+
