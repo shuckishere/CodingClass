@@ -1,0 +1,56 @@
+
+# Your Goal: 
+
+# Ask the user if they want to encrypt or decrypt a message
+
+# Step 1: 
+# 1. Ask the user if they want to encrypt or decrypt
+# 2. Ask them for input, save it, and either encrypt it or decrypt it in a message that you print (loop through and encrypt / decrypt)
+
+
+# Step 2: 
+# 1. Ask the user if they want to read from the file, or type it in the chat (ask for option 1 or 2)
+# 2. If they want to type in chat, it shouldn't do anything new. 
+# 3. If they want to read file, call readfile function and paste the words in the output file
+# 4. It should still ask if they want to encrypt or decrypt 
+# 5. If the user doesn't want to use the files, let them just do it with the chat like above
+
+
+
+
+
+# ======= Contants =============
+
+
+# ======= FUNCTIONS ===========
+def readFile():
+    # the open keyword opens a file in read-only mode by default
+    f = open("/input.txt" "r")
+    # read all the lines in the file and return them in a list
+    inputWords = []
+    lines = f.readlines()
+    for line in lines: 
+        words = line.split(" ")
+        inputWords.extend(words)
+    f.close()
+    return inputWords
+
+def writeFile(words):
+    f = open("/output.txt", "w")
+    f.write(words)
+    f.close()
+
+
+
+
+
+# ========= Main Code ==========
+
+
+wordsInFile = readFile()
+print(wordsInFile)
+
+
+writeFile("HI ")
+
+# Ask user for inpupt
