@@ -4,6 +4,15 @@
 
 
 
+# Your goal: Create a program that asks the user if they want to encrypt or decrypt
+
+# If the user wants to encrypt: 
+
+
+
+
+
+
 print("\n\nType your message")
 message = input()
 

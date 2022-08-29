@@ -48,7 +48,14 @@ def writeFile(words):
 
 
 def encryptWords(words):
-    return
+    encrypt = []
+    for word in words:
+        secretWord = ""
+        for letter in word: 
+           secretWord = secretWord + str(ord(letter))
+           print(letter + " " + secretWord)
+        encrypt.append(secretWord)
+    return encrypt
 
 
 def decryptWords(words):
@@ -64,25 +71,12 @@ def decryptWords(words):
 print("\n\nType your message")
 message = input()
 
+words = message.split(" ")
+secret = encryptWords(words)
+print(secret)
 
-encrypt = []
+
 
 #encrypt.append() - add to list 
 
-for letter in message:
-    codelett = ord(letter)
-    encrypt.append(codelett)
-
-
-print(encrypt)
-
-goodList = []
-goodStr = ""
-
-
-for numbs in encrypt:
-    codereturn = chr(numbs)
-    uncripSTR = uncripSTR + codereturn
-    #uncrip.append(codereturn)
-
-
+#
