@@ -1,0 +1,14 @@
+part 1: Build out basic objects with pixels
+
+part 2: (future) - build a way to display scenery + colors
+
+part 3: (future) - design scenery to generate from inputs & list
+
+part 4: (future) - design scenery to generate from input file & list
+
+part 5: (future) - create way for scenery to generate randomly
+
+part 6: (future) - create basic game where man runs through scenery and dies if he touches it
+
+
+
