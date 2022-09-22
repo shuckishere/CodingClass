@@ -17,10 +17,17 @@ import turtle
 # ======= Contants =============
 screen = turtle.Screen()
 rick = turtle.Turtle()
-pizelSize = 5
+pizelSize = 4
 
 
 # ======= FUNCTIONS ===========
+
+def skip(amount, derection):
+    rick.penup()
+    for i in range(amount):
+        move(derection)
+    rick.pendown()
+
 
 
 def square():
@@ -67,12 +74,22 @@ turtle.tracer(0,0)
 
 
 rick.goto(0,0)
-pixel("green")
-for i in range(50):
-    move("down")
-    paint("green", 50)
-    for i in range(50):
-        move('left')
+
+
+width = 50
+height = 20
+
+
+
+paint("green", 5)
+skip(5, "up")
+pixel("red")
+
+#for i in range(height):
+    #move("down")
+    #paint("green", width)
+    #for i in range(width):
+        #move('left')
 
 # move("left")
 # move("left")
