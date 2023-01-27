@@ -1,0 +1,4 @@
+
+friends = [input()]
+
+print (friends)
